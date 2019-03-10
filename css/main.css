@@ -1,0 +1,168 @@
+html {
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+header {
+  height: 100vh;
+  width: 100vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: calc(3.5rem - 100vh);
+  background: #AF3D4E;
+  color: #FAFAFA;
+  -webkit-box-shadow: 0px 1px 10px #999;
+          box-shadow: 0px 1px 10px #999;
+  margin-bottom: 10px;
+  z-index: 20;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+header .topbar {
+  z-index: 10;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 80%;
+  margin-left: 10%;
+  height: 3.5rem;
+  overflow: hidden;
+}
+
+header .topbar .title {
+  float: left;
+  padding: 10px 0;
+  font-family: 'Reem Kufi', sans-serif;
+  font-weight: 600;
+  opacity: 0;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+header .topbar a {
+  text-decoration: none;
+  color: #E7CBCF;
+}
+
+header .topbar a:hover {
+  color: #FAFAFA;
+}
+
+header .topbar nav {
+  float: right;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+header .topbar nav li {
+  display: inline-block;
+  margin-left: 3.5rem;
+}
+
+.landing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  z-index: 5;
+}
+
+.landing > .intro {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 3.75em;
+  font-weight: 600;
+}
+
+.landing > .tagline {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  font-weight: 100;
+}
+
+.landing .icons-social {
+  padding: 10px;
+}
+
+.landing .icons-social a {
+  color: #FAFAFA;
+}
+
+.landing .icons-social a svg path {
+  fill: #FAFAFA;
+}
+
+.landing .icons-social i {
+  font-size: 3em;
+  padding: 10px;
+}
+
+main {
+  color: #AF3D4E;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+main section {
+  min-height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10% 10%;
+  position: relative;
+}
+
+main section h1 {
+  font-size: 60px;
+  letter-spacing: -0.5px;
+}
+
+main section p {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 0;
+}
+/*# sourceMappingURL=main.css.map */

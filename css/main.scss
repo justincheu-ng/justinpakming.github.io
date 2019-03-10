@@ -1,0 +1,144 @@
+$colors: (
+  night-shadz: #AF3D4E,
+  alabaster: #FAFAFA,
+  star-dust: #9E9E9E,
+  careys-pink: #D49BA4,
+  oyster-pink: #E7CBCF
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name)
+}
+
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+  @media (min-width: 576px) {
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+  @media (min-width: 992px) {
+    font-size: 18px;
+  }
+  @media (min-width: 1200px) {
+		font-size: 20px;
+  }
+}
+
+header {
+  height: 100vh;
+  width: 100vw;
+  position: sticky;
+  top: calc(3.5rem - 100vh);
+  background: color(night-shadz);
+  color: color(alabaster);
+  box-shadow: 0px 1px 10px #999;
+  margin-bottom: 10px;
+  z-index: 20;
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  .topbar{
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    width: 80%;
+    margin-left: 10%;
+    height: 3.5rem;
+    overflow: hidden;
+    .title {
+      float: left;
+      padding: 10px 0;
+      font-family: 'Reem Kufi', sans-serif;
+      font-weight: 600;
+      opacity: 0;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    a {
+      text-decoration: none;
+      color: color(oyster-pink);
+      &:hover {
+        color: color(alabaster);
+      }
+    }
+    nav {
+      float: right;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
+      li {
+        display: inline-block;
+        margin-left: 3.5rem;
+      }
+      
+    }
+  }
+}
+
+
+
+.landing {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	justify-content: center;
+	padding: 0 30px;
+  text-align: center;
+  margin-bottom:10px;
+  z-index: 5;
+  >.intro {
+    font-family: 'Reem Kufi', sans-serif;
+	  font-size: 3.75em;
+	  font-weight: 600;
+  }
+  >.tagline {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    font-weight: 100;
+  }
+  .icons-social {
+    padding: 10px;
+    a {
+      color: color(alabaster);
+      svg path {
+        fill: color(alabaster);
+      }
+    }
+    i {
+      font-size: 3em;
+      padding: 10px;
+    }
+  }
+}
+
+
+
+main {
+  color: color(night-shadz);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  section {
+    min-height: 100vh;
+    justify-content: center;
+    padding: 10% 10%;
+    position: relative;
+    h1 {
+      font-size: 60px;
+      letter-spacing: -0.5px;
+    }
+    p {
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      padding: 0.5rem 0;
+    }
+  }
+}
