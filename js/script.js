@@ -4,7 +4,7 @@ var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
 var landing = anime({
   targets: 'div.landing',
-  translateY: h * 0.40,
+  translateY: h * 0.30,
   scale: 0.5,
   opacity: 0,
   duration: h * 0.60,
