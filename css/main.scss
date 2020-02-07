@@ -3,7 +3,10 @@ $colors: (
   alabaster: #FAFAFA,
   star-dust: #9E9E9E,
   careys-pink: #D49BA4,
-  oyster-pink: #E7CBCF
+  oyster-pink: #E7CBCF,
+  white-lilac: #E9E9E9,
+  mine-shaft: #7a3840,
+  font-gray: #6e6e6e
 );
 
 @function color($color-name) {
@@ -14,6 +17,8 @@ $colors: (
 html {
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
   @media (min-width: 576px) {
     font-size: 14px;
   }
@@ -26,6 +31,9 @@ html {
   @media (min-width: 1200px) {
 		font-size: 20px;
   }
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 header {
@@ -35,7 +43,7 @@ header {
   top: calc(3.5rem - 100vh);
   background: color(night-shadz);
   color: color(alabaster);
-  box-shadow: 0px 1px 10px #999;
+  //box-shadow: 0px 1px 10px #999;
   margin-bottom: 10px;
   z-index: 20;
   &::after {
@@ -107,9 +115,15 @@ header {
   .icons-social {
     padding: 10px;
     a {
-      color: color(alabaster);
+      color: color(oyster-pink);
+      &:hover {
+        color: color(alabaster);
+      }
       svg path {
-        fill: color(alabaster);
+        fill: color(oyster-pink);
+        &:hover {
+          color: color(alabaster);
+        }
       }
     }
     i {
@@ -127,18 +141,115 @@ main {
   width: 100%;
   height: 100%;
   section {
-    min-height: 100vh;
+    padding-top: 5%;
     justify-content: center;
-    padding: 10% 10%;
     position: relative;
+    .content {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      .line {
+        width: 1px;
+        min-height: 100%;
+        border-left: 1px solid color(night-shadz);
+        left: 45.83%;
+        position: absolute;
+      }
+      
+      .col {
+        //margin: 0;
+        //position: absolute;
+        //top: 50%;
+        //-ms-transform: translateY(-50%);
+        //transform: translateY(-50%);
+        .outer {
+          margin-bottom: 1rem;
+        }
+        .outeritem {
+          font-size: 1.5rem;
+        }
+        .inneritem{
+          font-size: 0.8rem;
+          margin-left: 0.5rem;
+        }
+      }
+    }
     h1 {
-      font-size: 60px;
+      font-size: 3rem;
       letter-spacing: -0.5px;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2rem;
+      letter-spacing: -0.5px;
+      margin-top: 1rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+      letter-spacing: -0.5px;
+      margin-top: 1rem;
+    }
+    h4 {
+      font-size: 1.2rem;
+      letter-spacing: -0.5px;
+      margin-top: 1rem;
+      color: color(font-gray);
+    }
+    h6 {
+      margin-top:3rem;
     }
     p {
-      font-size: 16px;
+      font-size: 1rem;
       letter-spacing: 0.5px;
       padding: 0.5rem 0;
+      color: color(font-gray);
+    }
+    .p {
+      color: color(font-gray);
+    }
+    a {
+      font-size: 1rem;
     }
   }
+}
+
+footer {
+  height: 100vh;
+  z-index: 9;
+  background: color(night-shadz);
+  align-content: center;
+}
+
+.divider {
+  border-bottom: thin;
+  margin-top: 5%;
+}
+
+.particle {
+  height: 100vw;
+  width: 100vw;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  canvas{
+    height: 100vw;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    z-index: -1;
+  }
+}
+
+.gray {
+  color: color(font-gray);
+}
+
+.comic {
+  opacity: 0;
 }

@@ -1,6 +1,8 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @media (min-width: 576px) {
@@ -27,6 +29,10 @@ html {
   }
 }
 
+html ::-webkit-scrollbar {
+  width: 0;
+}
+
 header {
   height: 100vh;
   width: 100vw;
@@ -35,8 +41,6 @@ header {
   top: calc(3.5rem - 100vh);
   background: #AF3D4E;
   color: #FAFAFA;
-  -webkit-box-shadow: 0px 1px 10px #999;
-          box-shadow: 0px 1px 10px #999;
   margin-bottom: 10px;
   z-index: 20;
 }
@@ -127,11 +131,19 @@ header .topbar nav li {
 }
 
 .landing .icons-social a {
+  color: #E7CBCF;
+}
+
+.landing .icons-social a:hover {
   color: #FAFAFA;
 }
 
 .landing .icons-social a svg path {
-  fill: #FAFAFA;
+  fill: #E7CBCF;
+}
+
+.landing .icons-social a svg path:hover {
+  color: #FAFAFA;
 }
 
 .landing .icons-social i {
@@ -147,22 +159,124 @@ main {
 }
 
 main section {
-  min-height: 100vh;
+  padding-top: 5%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 10% 10%;
   position: relative;
 }
 
+main section .content {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+main section .content .line {
+  width: 1px;
+  min-height: 100%;
+  border-left: 1px solid #AF3D4E;
+  left: 45.83%;
+  position: absolute;
+}
+
+main section .content .col .outer {
+  margin-bottom: 1rem;
+}
+
+main section .content .col .outeritem {
+  font-size: 1.5rem;
+}
+
+main section .content .col .inneritem {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
 main section h1 {
-  font-size: 60px;
+  font-size: 3rem;
   letter-spacing: -0.5px;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+main section h2 {
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+  margin-top: 1rem;
+}
+
+main section h3 {
+  font-size: 1.2rem;
+  letter-spacing: -0.5px;
+  margin-top: 1rem;
+}
+
+main section h4 {
+  font-size: 1.2rem;
+  letter-spacing: -0.5px;
+  margin-top: 1rem;
+  color: #6e6e6e;
+}
+
+main section h6 {
+  margin-top: 3rem;
 }
 
 main section p {
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.5px;
   padding: 0.5rem 0;
+  color: #6e6e6e;
+}
+
+main section .p {
+  color: #6e6e6e;
+}
+
+main section a {
+  font-size: 1rem;
+}
+
+footer {
+  height: 100vh;
+  z-index: 9;
+  background: #AF3D4E;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.divider {
+  border-bottom: thin;
+  margin-top: 5%;
+}
+
+.particle {
+  height: 100vw;
+  width: 100vw;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.particle canvas {
+  height: 100vw;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.gray {
+  color: #6e6e6e;
+}
+
+.comic {
+  opacity: 0;
 }
 /*# sourceMappingURL=main.css.map */
